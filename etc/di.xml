@@ -26,4 +26,16 @@
 
     <preference for="IntegrationHelper\IntegrationVersion\IntegrationVersionItemManagerInterface"
                 type="IntegrationHelper\IntegrationVersion\IntegrationVersionItemManager" />
+
+    <type name="IntegrationHelper\IntegrationVersionMagento\ContextInit">
+        <arguments>
+            <argument name="getterParentItemCollection" xsi:type="object">IntegrationHelper\IntegrationVersionMagento\Model\GetterParentItemCollection</argument>
+            <argument name="integrationVersionItemRepository" xsi:type="object">IntegrationHelper\IntegrationVersionMagento\Model\IntegrationVersionItemRepository</argument>
+            <argument name="integrationVersionRepository" xsi:type="object">IntegrationHelper\IntegrationVersionMagento\Model\IntegrationVersionRepository</argument>
+            <argument name="dateTime" xsi:type="object">IntegrationHelper\IntegrationVersionMagento\Model\DateTime</argument>
+            <argument name="hashGenerator" xsi:type="object">IntegrationHelper\IntegrationVersion\HashGenerator</argument>
+            <argument name="integrationVersionManager" xsi:type="object">IntegrationHelper\IntegrationVersion\IntegrationVersionManager</argument>
+            <argument name="integrationVersionItemManager" xsi:type="object">IntegrationHelper\IntegrationVersion\IntegrationVersionItemManager</argument>
+        </arguments>
+    </type>
 </config>

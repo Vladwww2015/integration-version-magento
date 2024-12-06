@@ -10,7 +10,10 @@ class IntegrationVersionItem
     implements IntegrationVersionItemInterface,
     \IntegrationHelper\IntegrationVersionMagento\Api\Data\IntegrationVersionItemInterface
 {
-
+    protected function _construct()
+    {
+        $this->_init(ResourceModel\IntegrationVersionItem::class);
+    }
     public function getIdValue(): int
     {
         return $this->getData(static::ID);

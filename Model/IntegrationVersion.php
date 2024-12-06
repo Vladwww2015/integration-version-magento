@@ -10,6 +10,10 @@ class IntegrationVersion
     implements IntegrationVersionInterface,
     \IntegrationHelper\IntegrationVersionMagento\Api\Data\IntegrationVersionInterface
 {
+    protected function _construct()
+    {
+        $this->_init(ResourceModel\IntegrationVersion::class);
+    }
 
     public function getIdValue(): int
     {

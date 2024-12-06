@@ -2,10 +2,11 @@
 
 namespace IntegrationHelper\IntegrationVersionMagento\Model\ResourceModel\IntegrationVersion;
 
-use Magento\Eav\Model\Entity\Collection\VersionControl\AbstractCollection;
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
+    protected $_idFieldName = \IntegrationHelper\IntegrationVersionMagento\Model\IntegrationVersion::ID;
     protected function _construct()
     {
         $this->_init(
