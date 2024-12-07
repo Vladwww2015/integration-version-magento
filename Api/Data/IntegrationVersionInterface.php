@@ -14,4 +14,6 @@ interface IntegrationVersionInterface
     public const CHECKSUM_COLUMNS = 'checksum_columns';
     public const CREATED_AT = 'created_at';
     public const UPDATED_AT = 'updated_at';
+    public const HASH_DATE_TIME = 'hash_date_time';
+
 }

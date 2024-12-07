@@ -49,8 +49,10 @@ class IntegrationVersionItem
         return $this->getData(static::VERSION_HASH);
     }
 
-    public function setVersionHash(string $versionHash): IntegrationVersionItemInterface
+    public function setVersionHash(string $versionHash, string $hashDateTime): IntegrationVersionItemInterface
     {
+        $this->setData(static::HASH_DATE_TIME, $hashDateTime);
+
         return $this->setData(static::VERSION_HASH, $versionHash);
     }
 
@@ -82,5 +84,13 @@ class IntegrationVersionItem
     public function setUpdatedAtValue(string $updatedAt): IntegrationVersionItemInterface
     {
         return $this->setData(static::UPDATED_AT, $updatedAt);
+    }
+
+    /**
+     * @return string
+     */
+    public function getHashDateTime(): string
+    {
+        return $this->getData(static::HASH_DATE_TIME);
     }
 }
