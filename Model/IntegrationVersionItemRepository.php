@@ -64,10 +64,11 @@ class IntegrationVersionItemRepository implements IntegrationVersionItemReposito
             ->addFieldToFilter('version_hash', ['neq' => $oldExternalHash])
             ->addFieldToFilter('parent_id', $parentId)
             ->addFieldToFilter('parent_id', $parentId)
-            ->addFieldToFilter('updated_at', ['>' => $updatedAt])
+            ->addFieldToFilter('hash_date_time', ['>' => $updatedAt])
             ->addFieldToFilter('status', IntegrationVersionItemInterface::STATUS_SUCCESS);
 
-        $collection->setPage($page, $limit);
+        $collection->setCurPage($page);
+        $collection->setPageSize($limit);
 
         return $collection->getItems();
     }
