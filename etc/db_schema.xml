@@ -10,6 +10,7 @@
         <column name="status" xsi:type="varchar" nullable="true" default="" length="50" comment="Status"/>
         <column name="table_name" xsi:type="varchar" nullable="true" default="" length="255" comment="Table Name"/>
         <column name="checksum_columns" xsi:type="text" nullable="true" comment="Checksum Columns"/>
+        <column name="hash_date_time" xsi:type="timestamp" nullable="true" comment="Hash Date Time"/>
         <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
         <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
         <constraint referenceId="PRIMARY" xsi:type="primary">
@@ -26,6 +27,7 @@
                 comment="Parent ID"/>
         <column name="identity_value" xsi:type="varchar" nullable="false" length="50" comment="Identity Value"/>
         <column name="version_hash" xsi:type="varchar" nullable="true" length="255" comment="Version Hash"/>
+        <column name="hash_date_time" xsi:type="timestamp" nullable="true" comment="Hash Date Time"/>
         <column name="status" xsi:type="varchar" nullable="true" default="" length="50" comment="Status"/>
         <column name="checksum" xsi:type="varchar" nullable="true" length="250" comment="Checksum"/>
         <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
