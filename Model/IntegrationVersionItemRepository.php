@@ -146,4 +146,16 @@ class IntegrationVersionItemRepository implements IntegrationVersionItemReposito
 
         return array_diff($identitiesForCheck, $collection->getColumnValues(MagentoIntegrationVersionItemInterface::IDENTITY_VALUE));
     }
+
+    public function getItemsWithDeletedStatus(): iterable
+    {
+        /**
+         * @var $collection Collection
+         */
+        $collection = $this->collectionFactory->create();
+        $collection
+            ->addFieldToFilter(MagentoIntegrationVersionItemInterface::STATUS, IntegrationVersionItemInterface::STATUS_DELETED);
+
+        return $collection;
+    }
 }
