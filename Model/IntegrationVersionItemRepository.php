@@ -126,4 +126,24 @@ class IntegrationVersionItemRepository implements IntegrationVersionItemReposito
 
         return $this;
     }
+
+
+    /**
+     * @param int $parentId
+     * @param array $identitiesForCheck
+     * @param string $identityColumn
+     * @return array
+     */
+    public function getDeletedIdentities(int $parentId, array $identitiesForCheck, string $identityColumn): array
+    {
+        /**
+         * @var $collection Collection
+         */
+        $collection = $this->collectionFactory->create();
+        $collection
+            ->addFieldToFilter(MagentoIntegrationVersionItemInterface::PARENT_ID, $parentId)
+            ->addFieldToFilter(MagentoIntegrationVersionItemInterface::IDENTITY_VALUE, $identitiesForCheck);
+
+        return array_diff($identitiesForCheck, $collection->getColumnValues(MagentoIntegrationVersionItemInterface::IDENTITY_VALUE));
+    }
 }
