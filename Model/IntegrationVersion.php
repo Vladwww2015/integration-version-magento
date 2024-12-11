@@ -99,6 +99,6 @@ class IntegrationVersion
 
     public function getHashDateTime(): string
     {
-        return $this->getData(static::HASH_DATE_TIME);
+        return $this->getData(static::HASH_DATE_TIME) ?: '1970-01-01 00:00:00';
     }
 }
