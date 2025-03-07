@@ -112,7 +112,7 @@ class IntegrationVersionItemRepository implements IntegrationVersionItemReposito
         return $this;
     }
 
-    public function setStatusDeletedIfNotSuccess(int $parentId): IntegrationVersionItemRepositoryInterface
+    public function setStatusDeletedIfNotSuccess(int $parentId, string $identityValue = ''): IntegrationVersionItemRepositoryInterface
     {
         $connection = $this->resourceConnection->getConnection();
         $connection
