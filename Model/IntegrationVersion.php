@@ -27,7 +27,7 @@ class IntegrationVersion
 
     public function getSource(): string
     {
-        return $this->getData(static::SOURCE);
+        return strval($this->getData(static::SOURCE));
     }
 
     public function setSource(string $source): IntegrationVersionInterface
@@ -37,7 +37,7 @@ class IntegrationVersion
 
     public function getTableName(): string
     {
-        return $this->getData(static::TABLE_NAME);
+        return strval($this->getData(static::TABLE_NAME));
     }
 
     public function setTableName(string $tableName): IntegrationVersionInterface
@@ -47,7 +47,7 @@ class IntegrationVersion
 
     public function getHash(): string
     {
-        return $this->getData(static::HASH);
+        return strval($this->getData(static::HASH));
     }
 
     public function setHash(string $hash, string $hashDateTime): IntegrationVersionInterface
@@ -59,7 +59,7 @@ class IntegrationVersion
 
     public function getIdentityColumn(): string
     {
-        return $this->getData(static::IDENTITY_COLUMN);
+        return strval($this->getData(static::IDENTITY_COLUMN));
     }
 
     public function setIdentityColumn(string $identityColumn): IntegrationVersionInterface
@@ -69,7 +69,7 @@ class IntegrationVersion
 
     public function getStatus(): string
     {
-        return $this->getData(static::STATUS);
+        return strval($this->getData(static::STATUS));
     }
 
     public function setStatus(string $status): IntegrationVersionInterface
@@ -89,7 +89,7 @@ class IntegrationVersion
 
     public function getUpdatedAtValue(): string
     {
-        return $this->getData(static::UPDATED_AT);
+        return strval($this->getData(static::UPDATED_AT));
     }
 
     public function setUpdatedAtValue(string $updatedAt): IntegrationVersionInterface
